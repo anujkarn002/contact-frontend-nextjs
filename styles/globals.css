@@ -1,0 +1,186 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.18.0/inter.css");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1,
+h2,
+h3,
+h4,
+p {
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+p.bold {
+  font-weight: 700;
+}
+
+:root {
+  --color-button-text: #fafafa;
+  --color-primary-100: #f5f5f5;
+  --color-primary-200: #eeeeee;
+  --color-primary-300: #e0e0e0;
+  --color-primary-400: #bdbdbd;
+  --color-primary-500: #9e9e9e;
+  --color-primary-600: #757575;
+  --color-primary-700: #616161;
+  --color-primary-800: #424242;
+  --color-primary-900: #212121;
+  --color-background: #ffffff;
+  /* --color-background: #e1f0f8; */
+  --color-secondary-washed-out: #63aed9;
+  --color-secondary: #449dd1;
+  --color-accent-glow: #73b6dd;
+  --color-accent: #83bee0;
+  --color-accent-hover: #93c6e8;
+  --color-accent-disabled: #a2cfe8;
+  --color-error: #fd4d4d;
+  --color-error-hover: #ff8686;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 2.8rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+p.small {
+  font-size: 0.85rem;
+}
+
+/* for firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0) var(--color-secondary);
+}
+
+/* for non-firefox */
+::-webkit-scrollbar {
+  overflow: overlay;
+  width: 8px;
+  /* shouldnt hardcode width, pls find way to make it dynamic, thin wasn't working for me...*/
+}
+
+::-webkit-scrollbar-track {
+  display: initial;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-secondary);
+  border-radius: 5px;
+}
+
+html,
+body,
+#__next {
+  background-color: var(--color-background);
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+textarea {
+  resize: none;
+}
+
+#nprogress {
+  position: relative;
+  z-index: 9999999;
+}
+
+img.emoji {
+  height: 1em;
+  width: 1em;
+  margin: 0 0.05em 0 0.1em;
+  vertical-align: -0.1em;
+}
+
+button:focus {
+  outline: none;
+}
+
+.hover-border-line {
+  display: inline-block;
+  margin: 0;
+}
+
+.hover-border-line:before {
+  display: flex;
+  content: "";
+  border-top: solid 3px var(--color-secondary);
+  transform: scaleX(0);
+  transition: transform 600ms ease-in-out;
+}
+
+.hover-border-line:hover:before {
+  transform: scaleX(1);
+}
+
+.slider {
+  /* position: absolute; */
+  width: 100%;
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+}
+
+.slide-in {
+  animation: slide-in 0.5s forwards;
+  -webkit-animation: slide-in 0.5s forwards;
+}
+
+.slide-out {
+  animation: slide-out 0.5s forwards;
+  -webkit-animation: slide-out 0.5s forwards;
+}
+
+@keyframes slide-in {
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes slide-in {
+  100% {
+    -webkit-transform: translateX(0%);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translateX(0%);
+    display: block;
+  }
+  100% {
+    transform: translateX(-100%);
+    display: none;
+  }
+}
+
+@-webkit-keyframes slide-out {
+  0% {
+    -webkit-transform: translateX(0%);
+    display: block;
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+    display: none;
+  }
+}
